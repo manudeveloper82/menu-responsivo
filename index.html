@@ -8,8 +8,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/mediaquery.css">
 </head>
-<body>
+<body onresize="mudouTamanho">
     <header>
         <h1>Meu Site</h1>
         <span id="burguer" class="material-icons" onclick="clickMenu()">menu</span>
@@ -45,17 +46,17 @@
             
             <p>
                 Para que possamos manter nossas páginas sempre adequadas a cada tipo de visualização, utilizamos os media types, que são listados abaixo de acordo com sua utilização. <br>
-               <br> <color>All:</color> Para todos os dispositivos. <br>
-                <color>Braille:</color> Para dispositivos táteis. <br>
-                <color>Embossed:</color> Para dispositivos que imprimem em braile. <br>
-                <color>Handheld:</color> Para dispositivos portáteis, geralmente com telas pequenas e banda limitada. <br>
-                <color>Print:</color> Para impressão em papel. <br>
-                <color>Projection:</color> Para apresentações como PPS. <br>
-                <color>Screen:</color> Para monitores ou dispositivos com telas coloridas e resolução adequada. <br>
-                <color>Speech:</color> Para sintetizadores de voz. As CSS 2 tem uma especificação de CSS chamada Aural, onde podemos formatar a voz dos sintetizadores. <br>
-                <color>Tty:</color> Para dispositivos que possuem uma grade fixa para exibição de caracteres, tais como: Teletypes, Terminais e também dispositivos portáteis com display limitados. <br>
-                <color>Tv:</color> Para dispositivos como televisores, ou seja, com baixa resolução, quantidade de cores e scroll limitados. <br>
-                <color>Observação:</color> Os nomes das medias são todas case-sensitive, ou seja, letras maiúsculas e minúsculas são diferenciadas.
+               <br> <span>All:</span> Para todos os dispositivos. <br>
+                <span>Braille:</span> Para dispositivos táteis. <br>
+                <span>Embossed:</span> Para dispositivos que imprimem em braile. <br>
+                <span>Handheld:</span> Para dispositivos portáteis, geralmente com telas pequenas e banda limitada. <br>
+                <span>Print:</span> Para impressão em papel. <br>
+                <span>Projection:</span> Para apresentações como PPS. <br>
+                <span>Screen:</span> Para monitores ou dispositivos com telas coloridas e resolução adequada. <br>
+                <span>Speech:</span> Para sintetizadores de voz. As CSS 2 tem uma especificação de CSS chamada Aural, onde podemos formatar a voz dos sintetizadores. <br>
+                <span>Tty:</span> Para dispositivos que possuem uma grade fixa para exibição de caracteres, tais como: Teletypes, Terminais e também dispositivos portáteis com display limitados. <br>
+                <span>Tv:</span> Para dispositivos como televisores, ou seja, com baixa resolução, quantidade de cores e scroll limitados. <br>
+                <span>Observação:</span> Os nomes das medias são todas case-sensitive, ou seja, letras maiúsculas e minúsculas são diferenciadas.
             </p>
             
             <p>
@@ -68,7 +69,15 @@
 
     </main>
     <script>
-    function clickMenu(){
+        function mudouTamanho() {
+            if (window.innerWidth >= 768) {
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'none'
+            }
+
+        }
+    function clickMenu() {
         if (itens.style.display == 'block'){
             itens.style.display = 'none'
         } else {
